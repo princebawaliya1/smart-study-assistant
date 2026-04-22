@@ -34,18 +34,11 @@ A simple AI-powered web app that summarizes study notes using Google Gemini API.
 
 ---
 
-## 🌐 Live Demo
 
-(You can add GitHub Pages link here)
 
----
-
-## 📌 Note
 
 This project uses a pre-trained AI model via API. No model training is done locally.
 
----
 
-## 👨‍💻 Author
 
-Your Name
+Prince Bawaliya

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Study Assistant</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="sidebar">
+    <div class="logo">
+      <span class="logo-icon">🎓</span>
+      <span class="logo-text">StudyAI</span>
+    </div>
+    <nav>
+      <button class="nav-btn active" onclick="switchTab('summarize', this)">
+        <span class="nav-icon">📄</span> Summarize Notes
+      </button>
+      
+    </nav>
+    
+  </div>
+
+  <main class="main-content">
+
+    <!-- SUMMARIZE TAB -->
+    <div class="tab-panel active" id="panel-summarize">
+      <div class="panel-header">
+        <h1>Summarize Notes</h1>
+        <p>Paste your lecture notes or textbook content and get a clean summary instantly.</p>
+      </div>
+      <div class="card">
+        <label class="field-label">Your Notes / Text</label>
+        <textarea id="sum-input" placeholder="Paste your study material here — lecture notes, paragraphs, chapters..."></textarea>
+        <div class="options-row">
+          <div class="select-group">
+            <label>Summary Style</label>
+            <select id="sum-length">
+              <option value="brief">Brief (2-3 sentences)</option>
+              <option value="detailed" selected>Detailed</option>
+              <option value="bullet">Bullet Points</option>
+              <option value="keyterms">Key Terms Only</option>
+            </select>
+          </div>
+          <button class="btn-primary" id="sum-btn" onclick="runSummarize()">Summarize →</button>
+        </div>
+      </div>
+      <div class="loader" id="sum-loader"><div class="spinner"></div> Summarizing your notes...</div>
+      <div class="result-card" id="sum-result" style="display:none;">
+        <div class="result-header">
+          <span>📋 Summary</span>
+          <button class="copy-btn" onclick="copyResult('sum-result-text')">Copy</button>
+        </div>
+        <div id="sum-result-text" class="result-text"></div>
+      </div>
+    </div>
+
+    
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
